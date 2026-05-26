@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Web</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <div class="boleto-wrapper">
+
+    <!-- ── Cabeçalho estilo boleto ───────────────────────────────────── -->
+    <header class="boleto-header">
+      <div class="boleto-logo">CALC</div>
+      <div class="boleto-title">
+        <span class="boleto-banco">Calculadora Web</span>
+        <span class="boleto-tipo">Processamento no Servidor · Flask + Python</span>
+      </div>
+      <div class="boleto-codigo">837.4 &nbsp; 12345.678901 &nbsp; 23456.789012 &nbsp; 3 &nbsp; 90010000010000</div>
+    </header>
+
+    <div class="boleto-linha-pontilhada">✂ ─────────────────────────────────────────────────────────────────</div>
+
+    <!-- ── Corpo principal ──────────────────────────────────────────── -->
+    <main class="boleto-corpo">
+
+      <!-- Instruções (coluna esquerda em boletos reais) -->
+      <section class="boleto-instrucoes">
+        <h2>Instruções</h2>
+        <ul>
+          <li>Preencha o(s) número(s) desejado(s).</li>
+          <li>Selecione a operação matemática.</li>
+          <li>Clique em <strong>Calcular</strong>.</li>
+          <li>O cálculo é realizado pelo servidor Python.</li>
+          <li>Raiz e logaritmo usam apenas o 1.º número.</li>
+        </ul>
+        <div class="boleto-vencimento">
+          <span>Operações disponíveis</span>
+          <strong>+  −  ×  ÷  ^  √  log₁₀</strong>
+        </div>
+      </section>
+
+      <!-- Formulário (coluna direita) -->
+      <section class="boleto-form">
+        <form method="POST" action="{{ url_for('index') }}">
+
+          <div class="form-grupo">
+            <label for="num1">Primeiro número</label>
+            <input type="number" id="num1" name="num1" step="any" required
+                   value="{{ request.form.get('num1', '') }}">
+          </div>
+
+          <div class="form-grupo">
+            <label for="operacao">Operação</label>
+            {% set op = request.form.get('operacao', '+') %}
+            <select id="operacao" name="operacao" required onchange="atualizarNum2()">
+              <option value="+"    {% if op == '+'    %}selected{% endif %}>+ Somar</option>
+              <option value="-"    {% if op == '-'    %}selected{% endif %}>− Subtrair</option>
+              <option value="*"    {% if op == '*'    %}selected{% endif %}>× Multiplicar</option>
+              <option value="/"    {% if op == '/'    %}selected{% endif %}>÷ Dividir</option>
+              <option value="**"   {% if op == '**'   %}selected{% endif %}>^ Potência</option>
+              <option value="sqrt" {% if op == 'sqrt' %}selected{% endif %}>√ Raiz quadrada</option>
+              <option value="log"  {% if op == 'log'  %}selected{% endif %}>log₁₀ Logaritmo</option>
+            </select>
+          </div>
+
+          <div class="form-grupo" id="grupo-num2">
+            <label for="num2">Segundo número</label>
+            <input type="number" id="num2" name="num2" step="any"
+                   value="{{ request.form.get('num2', '') }}">
+          </div>
+
+          <button type="submit" class="btn-calcular">Calcular</button>
+        </form>
+
+        <!-- Resultado -->
+        {% if etapas %}
+        <div class="resultado {% if 'Erro' in etapas %}resultado-erro{% endif %}">
+          <span class="resultado-label">Resposta do servidor (Python):</span>
+          <div class="resultado-etapas">{{ etapas }}</div>
+          {% if resultados and 'Erro' not in resultados|string %}
+          <div class="resultado-valor">= {{ resultados }}</div>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        <a href="{{ url_for('index') }}" class="btn-limpar">↺ Limpar / nova conta</a>
+      </section>
+
+    </main>
+
+    <!-- ── Rodapé boleto ─────────────────────────────────────────────── -->
+    <footer class="boleto-footer">
+      <span>Aula 7 · Flask · Calculadora Web</span>
+      <span>Cálculo realizado em: <strong>servidor Python</strong></span>
+      <span>math · sqrt · log10 · operações aritméticas</span>
+    </footer>
+
+  </div><!-- /boleto-wrapper -->
+
+  <script>
+    function atualizarNum2() {
+      const op = document.getElementById("operacao").value;
+      const semNum2 = op === "sqrt" || op === "log";
+      const grupo = document.getElementById("grupo-num2");
+      const num2  = document.getElementById("num2");
+      grupo.style.display = semNum2 ? "none" : "block";
+      num2.required = !semNum2;
+      if (semNum2) num2.value = "";
+    }
+    atualizarNum2();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+/* ── Reset & base ───────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #d6d0c4;
+  font-family: 'IBM Plex Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px 60px;
+}
+
+/* ── Wrapper principal (folha de boleto) ───────────────────────────────── */
+.boleto-wrapper {
+  width: 100%;
+  max-width: 760px;
+  background: #fffef9;
+  border: 1px solid #b0a990;
+  box-shadow: 4px 4px 0 #b0a990, 8px 8px 0 #9a9282;
+}
+
+/* ── Cabeçalho ─────────────────────────────────────────────────────────── */
+.boleto-header {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  grid-template-rows: auto auto;
+  border-bottom: 3px solid #1a1a1a;
+  padding: 12px 16px 10px;
+  gap: 2px 14px;
+}
+
+.boleto-logo {
+  grid-row: 1 / 3;
+  background: #1a1a1a;
+  color: #fffef9;
+  font-family: 'Courier Prime', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 3px solid #1a1a1a;
+}
+
+.boleto-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.boleto-banco {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.boleto-tipo {
+  font-size: 11px;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+.boleto-codigo {
+  grid-column: 2;
+  font-family: 'Courier Prime', monospace;
+  font-size: 13px;
+  color: #1a1a1a;
+  letter-spacing: 1px;
+  border-top: 1px solid #ccc;
+  padding-top: 6px;
+}
+
+/* ── Linha pontilhada de corte ─────────────────────────────────────────── */
+.boleto-linha-pontilhada {
+  font-family: 'Courier Prime', monospace;
+  font-size: 11px;
+  color: #999;
+  padding: 6px 10px;
+  background: #f5f3ed;
+  border-top: 1px dashed #b0a990;
+  border-bottom: 1px dashed #b0a990;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ── Corpo (duas colunas) ──────────────────────────────────────────────── */
+.boleto-corpo {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+/* ── Instruções (esquerda) ─────────────────────────────────────────────── */
+.boleto-instrucoes {
+  padding: 20px 18px;
+  border-right: 2px solid #1a1a1a;
+}
+
+.boleto-instrucoes h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e0ddd5;
+  padding-bottom: 6px;
+}
+
+.boleto-instrucoes ul {
+  list-style: none;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.8;
+}
+
+.boleto-instrucoes ul li::before {
+  content: "›  ";
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.boleto-vencimento {
+  margin-top: 18px;
+  border: 1px solid #1a1a1a;
+  padding: 8px 10px;
+  background: #f5f3ed;
+}
+
+.boleto-vencimento span {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.boleto-vencimento strong {
+  font-family: 'Courier Prime', monospace;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+}
+
+/* ── Formulário (direita) ──────────────────────────────────────────────── */
+.boleto-form {
+  padding: 20px 20px 18px;
+}
+
+.form-grupo {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 9px 10px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 16px;
+  color: #1a1a1a;
+  background: #fffef9;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 0;
+  outline: none;
+  transition: box-shadow 0.15s;
+  appearance: none;
+}
+
+input[type="number"]:focus,
+select:focus {
+  box-shadow: 3px 3px 0 #1a1a1a;
+}
+
+/* ── Botão calcular ────────────────────────────────────────────────────── */
+.btn-calcular {
+  width: 100%;
+  padding: 11px;
+  margin-top: 4px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fffef9;
+  background: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-calcular:hover  { background: #333; }
+.btn-calcular:active { transform: translateY(1px); }
+
+/* ── Resultado ─────────────────────────────────────────────────────────── */
+.resultado {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: #f5f3ed;
+  border: 1.5px solid #1a1a1a;
+  border-left: 5px solid #1a1a1a;
+}
+
+.resultado-erro {
+  border-left-color: #c0392b;
+  background: #fdf0ee;
+}
+
+.resultado-label {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.resultado-etapas {
+  font-family: 'Courier Prime', monospace;
+  font-size: 15px;
+  color: #333;
+}
+
+.resultado-valor {
+  font-family: 'Courier Prime', monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-top: 6px;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+/* ── Link limpar ───────────────────────────────────────────────────────── */
+.btn-limpar {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #555;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border-bottom: 1px dashed #999;
+  padding-bottom: 1px;
+}
+
+.btn-limpar:hover { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+
+/* ── Rodapé ────────────────────────────────────────────────────────────── */
+.boleto-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #1a1a1a;
+  color: #fffef9;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* ── Responsivo ────────────────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .boleto-corpo { grid-template-columns: 1fr; }
+  .boleto-instrucoes { border-right: none; border-bottom: 2px solid #1a1a1a; }
+  .boleto-footer { flex-direction: column; gap: 4px; text-align: center; }
+  .boleto-header { grid-template-columns: 56px 1fr; }
+}
