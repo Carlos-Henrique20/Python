@@ -1,0 +1,61 @@
+data,loja,regiao,produto,categoria,quantidade,preco_unitario
+2025-01-05,Loja Centro,Sudeste,Notebook,Informática,2.0,3200.0
+2025-01-08,Loja Norte,Sudeste,Mouse,Acessórios,5.0,120.0
+2025-01-12,Loja Sul,Sul,Teclado,Acessórios,3.0,210.0
+2025-01-18,Loja Centro,Sudeste,Monitor,Informática,2.0,980.0
+2025-01-25,Loja Nordeste,Nordeste,Headset,Acessórios,4.0,250.0
+2025-02-03,Loja Centro,Sudeste,SSD 1TB,Armazenamento,3.0,450.0
+2025-02-07,Loja Norte,Sudeste,Notebook,Informática,1.0,3400.0
+2025-02-15,Loja Sul,Sul,Mouse,Acessórios,,115.0
+2025-02-20,Loja Nordeste,Nordeste,Monitor,Informática,2.0,1020.0
+2025-02-26,Loja Centro,Sudeste,Webcam,Acessórios,4.0,230.0
+2025-03-04,Loja Norte,Sudeste,Teclado,Acessórios,5.0,220.0
+2025-03-09,Loja Sul,Sul,Notebook,Informática,2.0,3550.0
+2025-03-13,Loja Nordeste,Nordeste,Mouse,Acessórios,7.0,110.0
+2025-03-21,Loja Centro,Sudeste,Headset,Acessórios,3.0,270.0
+2025-03-28,Loja Norte,Sudeste,SSD 1TB,Armazenamento,2.0,470.0
+2025-04-02,Loja Sul,Sul,Monitor,Informática,3.0,990.0
+2025-04-10,Loja Nordeste,Nordeste,Notebook,Informática,1.0,3300.0
+2025-04-17,Loja Centro,Sudeste,Mouse,Acessórios,8.0,
+2025-04-23,Loja Norte,Sudeste,Webcam,Acessórios,2.0,245.0
+2025-04-29,Loja Sul,Sul,Headset,Acessórios,4.0,260.0
+2025-05-05,Loja Nordeste,Nordeste,Teclado,Acessórios,3.0,215.0
+2025-05-11,Loja Centro,Sudeste,Notebook,Informática,2.0,3450.0
+2025-05-16,Loja Norte,Sudeste,Monitor,Informática,2.0,1010.0
+2025-05-22,Loja Sul,Sul,SSD 1TB,Armazenamento,4.0,460.0
+2025-05-30,Loja Nordeste,Nordeste,Mouse,Acessórios,5.0,118.0
+2025-06-03,Loja Centro,Sudeste,Webcam,Acessórios,3.0,235.0
+2025-06-09,Loja Norte,Sudeste,Headset,Acessórios,4.0,275.0
+2025-06-14,Loja Sul,Sul,Teclado,Acessórios,4.0,225.0
+2025-06-20,Loja Nordeste,Nordeste,Notebook,Informática,2.0,3500.0
+2025-06-27,Loja Centro,Sudeste,Monitor,Informática,1.0,995.0
+2025-07-04,Loja Norte,Sudeste,Mouse,Acessórios,6.0,122.0
+2025-07-10,Loja Sul,Sul,Webcam,Acessórios,3.0,240.0
+2025-07-15,Loja Nordeste,Nordeste,SSD 1TB,Armazenamento,2.0,455.0
+2025-07-21,Loja Centro,Sudeste,Headset,Acessórios,5.0,265.0
+2025-07-28,Loja Norte,Sudeste,Notebook,Informática,1.0,3600.0
+2025-08-02,Loja Sul,Sul,Monitor,Informática,2.0,1030.0
+2025-08-08,Loja Nordeste,Nordeste,Mouse,Acessórios,8.0,112.0
+2025-08-13,Loja Centro,Sudeste,Teclado,Acessórios,3.0,218.0
+2025-08-19,Loja Norte,Sudeste,SSD 1TB,Armazenamento,3.0,465.0
+2025-08-26,Loja Sul,Sul,Notebook,Informática,2.0,3480.0
+2025-09-03,Loja Nordeste,Nordeste,Webcam,Acessórios,4.0,228.0
+2025-09-09,Loja Centro,Sudeste,Monitor,Informática,3.0,1005.0
+2025-09-15,Loja Norte,Sudeste,Headset,Acessórios,,280.0
+2025-09-22,Loja Sul,Sul,Mouse,Acessórios,7.0,119.0
+2025-09-29,Loja Nordeste,Nordeste,Notebook,Informática,1.0,3380.0
+2025-10-05,Loja Centro,Sudeste,SSD 1TB,Armazenamento,4.0,475.0
+2025-10-11,Loja Norte,Sudeste,Teclado,Acessórios,5.0,223.0
+2025-10-18,Loja Sul,Sul,Headset,Acessórios,3.0,268.0
+2025-10-24,Loja Nordeste,Nordeste,Monitor,Informática,2.0,1015.0
+2025-10-30,Loja Centro,Sudeste,Mouse,Acessórios,6.0,121.0
+2025-11-04,Loja Norte,Sudeste,Notebook,Informática,2.0,3520.0
+2025-11-10,Loja Sul,Sul,Webcam,Acessórios,4.0,238.0
+2025-11-16,Loja Nordeste,Nordeste,Teclado,Acessórios,3.0,216.0
+2025-11-22,Loja Centro,Sudeste,Monitor,Informática,2.0,
+2025-11-28,Loja Norte,Sudeste,Mouse,Acessórios,7.0,117.0
+2025-12-03,Loja Sul,Sul,SSD 1TB,Armazenamento,3.0,468.0
+2025-12-09,Loja Nordeste,Nordeste,Headset,Acessórios,4.0,272.0
+2025-12-14,Loja Centro,Sudeste,Notebook,Informática,1.0,3420.0
+2025-12-20,Loja Norte,Sudeste,Monitor,Informática,2.0,1025.0
+2025-12-27,Loja Sul,Sul,Mouse,Acessórios,9.0,116.0
